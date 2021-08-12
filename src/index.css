@@ -80,7 +80,11 @@ a:hover {
 }
 
 header {
-  background: var(--primary);
+  background: #87CEFA ;
+}
+
+.h1LazyHero {
+  color: blue;
 }
 
 header a {
@@ -96,7 +100,8 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: var(--secondary);
+  background-color:  #87CEFA;
+  color: white;
 }
 
 button:hover {
@@ -144,6 +149,7 @@ input:focus {
 .flex-row {
   display: flex;
   flex-wrap: wrap;
+  list-style: none;
 }
 
 .space-between {
@@ -177,6 +183,8 @@ input:focus {
 .px-1 {
   padding-right: var(--spacing-one);
   padding-left: var(--spacing-one);
+  padding: 40px;
+  margin: 30px;
 }
 
 .px-2 {
