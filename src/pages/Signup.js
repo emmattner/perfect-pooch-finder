@@ -6,7 +6,7 @@ import { ADD_USER } from '../api/mutations';
 import { Form } from 'semantic-ui-react'
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '', firstName: '', lastName: '' });
+  const [formState, setFormState] = useState({ email: '', password: '', confirmPassword: '', firstName: '', lastName: '', age: '', });
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
@@ -18,43 +18,53 @@ function Signup(props) {
     Auth.login(token);
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = (event, {name, value}) => {
     setFormState({
       ...formState,
       [name]: value,
     });
   };
-
-  const livingOptions = [
-    { key: 'Aptmnt', text: 'Apartment', value: 'apartment' },
-    { key: 'Sml House', text: 'Small House', value: 'small house' },
-    { key: 'Med House', text: 'Medium House', value: 'medium house' },
-    { key: 'Lrg House', text: 'Large House', value: 'large house' },
-    { key: 'Acerage', text: 'Acerage', value: 'acerage' },
+  // match this to temperament value
+  const temperamentOptions = [
+    { key: 'Affectionate', text: 'Affectionate', value: 'Affectionate' },
+    { key: 'Friendly', text: 'Friendly', value: 'Friendly' },
+    { key: 'Lively', text: 'Lively', value: 'Lively' },
+    { key: 'Gentle', text: 'Gentle', value: 'Gentle' },
+    { key: 'Intelligent', text: 'Intelligent', value: 'Intelligent' },
+    { key: 'Quiet', text: 'Quiet', value: 'Quiet' },
+    { key: 'Sociable', text: 'Sociable', value: 'Sociable' },
+    { key: 'Playful', text: 'Playful', value: 'Playful' },
+    { key: 'Agile', text: 'Agile', value: 'Agile' },
+    { key: 'Active', text: 'Active', value: 'Active' },
+    { key: 'Loyal', text: 'Loyal', value: 'Loyal' },
+    { key: 'Outgoing', text: 'Outgoing', value: 'Outgoing' },
+    { key: 'Protective', text: 'Protective', value: 'Protective' },
+    
   ]
-
-  const activityOptions = [
-    { key: 'Seldom', text: 'Seldom', value: 'Seldom' },
-    { key: 'Not Very Active', text: 'Not Very Active', value: 'Not Very Active' },
-    { key: 'Moderately Active', text: 'Moderately Active', value: 'Moderately Active' },
-    { key: 'Very Active', text: 'Very Active', value: 'Very Active' },
-  ]
-
-  const breedOptions = [
+  // Match this to breed group. 
+  const dogType = [
+    { key: 'Terrier', text: 'Terrier', value: 'Terrier' },
+    { key: 'Working', text: 'Working', value: 'Working' },
+    { key: 'Non-Sporting', text: 'Non-Sporting', value: 'Non-Sporting' },
     { key: 'Toy', text: 'Toy', value: 'Toy' },
-    { key: 'Sml', text: 'Small', value: 'small' },
-    { key: 'Med', text: 'Medium', value: 'medium' },
-    { key: 'Lrg', text: 'Large', value: 'large' },
-    { key: 'Giant', text: 'Giant', value: 'giant' },
-    { key: 'I don\'t care', text: 'I don\'t care', value: "I don\'t care" },
+    { key: 'Hound', text: 'Hound', value: 'Hound' },
+    { key: 'Sporting', text: 'Sporting', value: 'Sporting' },
+    { key: 'Herding', text: 'Herding', value: 'Herding' },
+  ]
+  // change this to match breed.minWeight lte 
+  const dogSize = [
+    { key: 'Toy', text: 'Toy', value: 5 },
+    { key: 'Sml', text: 'Small', value: 10 },
+    { key: 'Med', text: 'Medium', value: 20 },
+    { key: 'Lrg', text: 'Large', value: 30 },
+    { key: 'Giant', text: 'Giant', value: 1000 },
   ]
   
   const foodOptions = [
-    { key: '$10', text: '$10', value: '$10' },
-    { key: '$20', text: '$20', value: '$20' },
-    { key: '$30', text: '$30', value: '$30' },
-    { key: 'More than $30', text: 'More than $30', value: 'More than $30' },
+    { key: '$', text: '$', value: 50 },
+    { key: '$$', text: '$$', value: 150 },
+    { key: '$$$', text: '$$$', value: 300 },
+    { key: '$$$$', text: '$$$$', value: 500 },
     
   ]
 
@@ -65,112 +75,84 @@ function Signup(props) {
       <br></br>
       <Form onSubmit={handleFormSubmit} className="container">
         <Form.Group widths='equal'>
-          <Form.Input fluid label='First name' placeholder='First name' type='firstName' id='firstName' onChange={handleChange} />
-          <Form.Input fluid label='Last name' placeholder='Last name' type='lastName' id='lastName' onChange={handleChange}/>
+          <Form.Input fluid label='First name' placeholder='First name' type='firstName' id='firstName' name='firstName' onChange={handleChange} />
+          <Form.Input fluid label='Last name' placeholder='Last name' type='lastName' id='lastName' name='lastName' onChange={handleChange}/>
           </Form.Group>
           <Form.Group widths='equal'>
-          <Form.Input fluid label='Password' placeholder='*****' type='password' id='pwd' onChange={handleChange}/>
-          <Form.Input fluid label='Confirm Password' placeholder='*****' type='confirmPassword' id='confirmPwd' onChange={handleChange}/>
+          <Form.Input fluid label='Password' placeholder='*****' type='password' id='pwd' name='password' onChange={handleChange}/>
         </Form.Group>  
         <Form.Group widths='equal'>
-          <Form.Input fluid label='Email Address' placeholder='youremail@address.com' type='email' id='email' onChange={handleChange}/>
+          <Form.Input fluid label='Email Address' placeholder='youremail@address.com' type='email' id='email' name='email' onChange={handleChange}/>
         </Form.Group>  
           <Form.Group widths='equal'>
           <Form.Select
             fluid
-            label='What is your activity level?'
-            options={activityOptions}
-            placeholder='Activity Lvl'
-            type='exerciseHours'
-            id=''
+            label='What breed type are you looking for?'
+            options={dogType}
+            placeholder='Breed Type'
+            id='dogType'
+            name='dogType'
             onChange={handleChange}
           />
           <Form.Select
             fluid
-            label='What size is your living space?'
-            options={livingOptions}
-            placeholder='Living Space'
-            type='livingSpace'
+            label='Select the temperament you wish for your dog'
+            options={temperamentOptions}
+            placeholder='Temperament'
+            id='temperament'
+            name='temperament'
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group inline>
-          <label>What is your yard size?</label>
-          <Form.Radio
-            label='Small'
-            value='sm'
-            checked={true}
-            type='yardSize'
-            onChange={handleChange}
-          />
-          <Form.Radio
-            label='Medium'
-            value='md'
-            checked={false}
-            type='yardSize'
-            onChange={handleChange}
-          />
-          <Form.Radio
-            label='Large'
-            value='lg'
-            checked={false}
-            type='yardSize'
-            onChange={handleChange}
-          />
-            <Form.Radio
-            label='X-Large'
-            value='x-lg'
-            checked={false}
-            type='yardSize'
-            onChange={handleChange}
-          />
-        </Form.Group>
+        <br></br>
         <Form.Group inline>
           <label>What is your age group?</label>
           <Form.Radio
             label='10-19'
             value='10-19'
-            checked={true}
-            type='age'
+            checked={formState.age === '10-19'}
+            name='age'
             onChange={handleChange}
           />
           <Form.Radio
             label='20-29'
             value='20-29'
-            checked={false}
-            type='age'
+            checked={formState.age === '20-29'}
+            name='age'
             onChange={handleChange}
           />
           <Form.Radio
             label='30-39'
             value='30-39'
-            checked={false}
-            type='age'
+            checked={formState.age === '30-39'}
+            name='age'
             onChange={handleChange}
           />
             <Form.Radio
             label='40-49'
             value='40-49'
-            checked={false}
-            type='age'
+            checked={formState.age === '40-49'}
+            name='age'
             onChange={handleChange}
           />
             <Form.Radio
             label='50-59'
             value='50-59'
-            checked={false}
-            type='age'
+            checked={formState.age === '50-59'}
+            name='age'
             onChange={handleChange}
           />  
           
         </Form.Group>
+        <br></br>
         <Form.Group widths='equal'>
         <Form.Select
             fluid
             label='What size dog are you looking for?'
-            options={breedOptions}
+            options={dogSize}
             placeholder='Breed Size'
             type='dogSize'
+            name='dogSize'
             onChange={handleChange}
           />
           <Form.Select
@@ -179,14 +161,21 @@ function Signup(props) {
             options={foodOptions}
             placeholder='Food cost'
             type='foodCost'
+            name='foodCost'
             onChange={handleChange}
           /> 
         </Form.Group>
-        <Form.Checkbox label='I agree to the Terms and Conditions' onChange={handleChange}/>
-      </Form>
-      <div className="flex-row flex-end">
+        <div className="flex-row flex-end">
           <button type="submit">Submit</button>
         </div>
+      </Form>
+      
+        <br>
+        </br>
+        <br>
+        </br>
+        <br>
+        </br>
     </div>
   );
 }
