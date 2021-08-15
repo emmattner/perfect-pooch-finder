@@ -87,6 +87,19 @@ header {
   color: blue;
 }
 
+.dashboard {
+  text-align: center;
+}
+
+.userInfo {
+  margin-left: 35px;
+}
+
+footer {
+  margin-top: 100px;
+  margin-left: 430px;
+}
+
 header a {
   color: var(--light);
 }
@@ -203,8 +216,12 @@ input:focus {
 }
 
 .card {
-  width: 25%;
-  text-align: center;
+  justify-content: center;
+  justify-self: center;
+  align-content: center;
+  text-align-last: center;
+  margin: 70px;
+  border-bottom: inset;
 }
 
 .error-text {
