@@ -14,7 +14,9 @@ const Home = () => {
                 <h1 className="h1LazyHero">Time to Find Your Perfect Pooch!</h1>
             </LazyHero>
       </div>
-      
+      <footer>
+      <h4 className="footer" class="has-text-weight-bold">Made with ❤️️  by Emma Mattner &copy; 2021</h4>
+      </footer>
 
     </div>
   );
