@@ -38,9 +38,9 @@ function Login() {
       <h2>Login</h2>
       <form onSubmit={handleFormSubmit}>
         <Form.Group widths='equal'>
-          <Form.Input fluid label='Email Address' placeholder='youremail@address.com' id='email' onChange={handleChange} />
+          <Form.Input fluid label='Email Address' placeholder='youremail@address.com' type='email' id='email' name='email' onChange={handleChange} />
           <br></br>
-          <Form.Input fluid label='Password' placeholder='*****' id='pwd' onChange={handleChange} />
+          <Form.Input fluid label='Password' placeholder='*****' type='password' id='pwd' name='password' onChange={handleChange} />
         </Form.Group>  
         <br></br>
         {error ? (
@@ -57,31 +57,4 @@ function Login() {
 
 }
 
-export default Login;
-
-{/* <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
-          <input placeholder="youremail@test.com" name="email" type="email" id="email" onChange={handleChange} />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input placeholder="******" name="password" type="password" id="pwd" onChange={handleChange} />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="age">Age:</label>
-          <input placeholder="Age" name="age" type="age" id="age" onChange={handleChange} />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="yardSize">Size of yard:</label>
-          <input placeholder="" name="password" type="password" id="pwd" onChange={handleChange} />
-        </div>
-        {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
-          </div>
-        ) : null}
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div> */}
-
-      
+export default Login;  
