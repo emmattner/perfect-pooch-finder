@@ -11,8 +11,7 @@
 * [License](#license)
 
 ## Description 
-
-Here
+Here I have created an application that gives the user access to find out what dog/dogs are best suited to them. The app entails a sign up page that has multiple questions about your life, living and dog breed/size preference. The user will have a dashboard/profile where all the data of the matched dogs will be stored until next login. 
 
 ## Installation Instructions
 Simply clone the repository into your directory, then right click and run Open Intergrated Terminal, run ``'npm install'`` to install the required dependencies.
@@ -23,8 +22,8 @@ This application This application employs the following dependencies:
  * 
  
 ## Application ScreenShots
-
-
+![perfpooch](https://user-images.githubusercontent.com/78684306/129529365-65f2798d-c6ce-488c-97e3-1acce39f543c.png)
+ 
 
 ## Contributors
 Emma Mattner
