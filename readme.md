@@ -19,6 +19,8 @@ Simply clone the repository into your directory, then right click and run Open I
 
 ## Usage Information
  * React
+ * React Router-DOM
+ * Semantic-UI
  * GraphQl
  * JWT-Decode
  
