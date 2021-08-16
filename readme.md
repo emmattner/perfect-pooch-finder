@@ -24,6 +24,9 @@ Simply clone the repository into your directory, then right click and run Open I
  
 ## Application ScreenShots
 ![perfpooch](https://user-images.githubusercontent.com/78684306/129529365-65f2798d-c6ce-488c-97e3-1acce39f543c.png)
+
+![perfPooch2](https://user-images.githubusercontent.com/78684306/129530091-a2cb875d-319d-45af-97ef-719ddeb4ac75.png)
+
  
 
 ## Contributors
