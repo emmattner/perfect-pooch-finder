@@ -92,7 +92,7 @@ header {
 }
 
 .userInfo {
-  margin-left: 35px;
+  margin-left: 50px;
 }
 
 footer {
@@ -222,6 +222,7 @@ input:focus {
   text-align-last: center;
   margin: 70px;
   border-bottom: inset;
+  border: outset;
 }
 
 .error-text {
