@@ -18,8 +18,9 @@ Simply clone the repository into your directory, then right click and run Open I
 
 
 ## Usage Information
-This application This application employs the following dependencies:
- * 
+ * React
+ * GraphQl
+ * JWT-Decode
  
 ## Application ScreenShots
 ![perfpooch](https://user-images.githubusercontent.com/78684306/129529365-65f2798d-c6ce-488c-97e3-1acce39f543c.png)
