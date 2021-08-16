@@ -52,7 +52,7 @@ const Profile = () => {
       <div className="container">
         <h1 className="dashboard">Welcome to your Doggie Dashboard</h1>
         {dataBreeds && !loadingBreeds && dataBreeds.breedsByUser.map(breed => (
-          <div class="min-h-screen bg-gray-100 flex justify-center items-center">
+          <div>
             <BreedCard {...breed} />
           </div>
         ))}
