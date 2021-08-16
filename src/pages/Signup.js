@@ -111,6 +111,7 @@ function Signup(props) {
             label='10-19'
             value='10-19'
             checked={formState.age === '10-19'}
+            id='age'
             name='age'
             onChange={handleChange}
           />
@@ -118,6 +119,7 @@ function Signup(props) {
             label='20-29'
             value='20-29'
             checked={formState.age === '20-29'}
+            id='age'
             name='age'
             onChange={handleChange}
           />
@@ -125,6 +127,7 @@ function Signup(props) {
             label='30-39'
             value='30-39'
             checked={formState.age === '30-39'}
+            id='age'
             name='age'
             onChange={handleChange}
           />
@@ -132,6 +135,7 @@ function Signup(props) {
             label='40-49'
             value='40-49'
             checked={formState.age === '40-49'}
+            id='age'
             name='age'
             onChange={handleChange}
           />
@@ -139,6 +143,7 @@ function Signup(props) {
             label='50-59'
             value='50-59'
             checked={formState.age === '50-59'}
+            id='age'
             name='age'
             onChange={handleChange}
           />  
@@ -152,6 +157,7 @@ function Signup(props) {
             options={dogSize}
             placeholder='Breed Size'
             type='dogSize'
+            id='dogSize'
             name='dogSize'
             onChange={handleChange}
           />
@@ -161,6 +167,7 @@ function Signup(props) {
             options={foodOptions}
             placeholder='Food cost'
             type='foodCost'
+            id='foodCost'
             name='foodCost'
             onChange={handleChange}
           /> 
